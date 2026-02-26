@@ -1,0 +1,7 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'PLG_TJVIDEO_CINCOPA' => 'Techjoomla- Cincopa Video API',
+  'PLG_TJVIDEO_CINCOPA_XML_DESCRIPTION' => 'Techjoomla- Cincopa Video API',
+  'PLG_TJVIDEO_CINCOPA_PLUG_VIDEO_API' => 'Techjoomla- Cincopa Video API',
+);

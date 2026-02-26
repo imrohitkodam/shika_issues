@@ -1,0 +1,17 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'COM_TJDASHBOARD' => 'TjDashboard',
+  'COM_TJDASHBOARD_XML_DESCRIPTION' => '',
+  'COM_TJDASHBOARD_TITLE_DASHBOARDS' => 'Dashboards',
+  'COM_TJDASHBOARD_TITLE_WIDGETS' => 'Widgets',
+  'COM_TJDASHBOARD_DASHBOARD_VIEW_EDIT_TITLE' => 'Create An Dashboard',
+  'COM_TJDASHBOARD_DASHBOARD_VIEW_EDIT_DESC' => 'Shows a form to create a New Dashboard.',
+  'COM_TJDASHBOARD_DASHBOARDS_VIEW_DEFAULT_TITLE' => 'List all Dashboards',
+  'COM_TJDASHBOARD_DASHBOARDS_VIEW_DEFAULT_DESC' => 'Shows a list of all the dashboards.',
+  'COM_TJDASHBOARD_TITLE_ITEM_VIEW_DASHBOARD' => 'Single Dashboard',
+  'COM_TJDASHBOARD_TITLE_DASHBOARD' => 'Dashboard',
+  'COM_TJDASHBOARD_FAILURE_TEXT' => 'Success',
+  'COM_TJDASHBOARD_TITLE_ITEM_VIEW_DASHBOARD_DESC' => 'Single dashboard',
+  'COM_TJDASHBOARD_CHANGE_DASHBOARD' => 'Select Dashboard',
+);

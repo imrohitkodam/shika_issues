@@ -1,0 +1,7 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'PLG_TJLMS_USERREDIRECT_NAME' => 'Tjlms-User redirection plugin',
+  'PLG_TJLMS_USERREDIRECT_DESC' => 'This is user plug-in will work to redirect the user to the Tjlms Dashboard page',
+  'PLG_USER_TJLMSUSERREDIRECTION' => 'Tjlms-User redirection plugin',
+);

@@ -1,0 +1,6 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'PLG_TJREPORTS_SINGLECOURSEREPORT' => 'Techjoomla- Tj Single course report',
+  'PLG_TJREPORTS_SINGLECOURSEREPORT_DESC' => 'Single course reports',
+);

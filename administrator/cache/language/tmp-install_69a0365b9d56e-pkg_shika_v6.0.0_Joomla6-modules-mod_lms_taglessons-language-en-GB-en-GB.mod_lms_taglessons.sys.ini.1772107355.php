@@ -1,0 +1,6 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'MOD_LMS_TAG_LESSONS' => 'Tag based Lessons',
+  'MOD_LMS_TAG_LESSONS_DESC' => 'Module to show lesson as per lesson tag',
+);

@@ -1,0 +1,6 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'PLG_TJREPORTS_SCORMSUMMARYREPORT' => 'Techjoomla - Tj SCORM Summary Report',
+  'PLG_TJREPORTS_SCORMSUMMARYREPORT_DESC' => 'SCORM Summary Report',
+);

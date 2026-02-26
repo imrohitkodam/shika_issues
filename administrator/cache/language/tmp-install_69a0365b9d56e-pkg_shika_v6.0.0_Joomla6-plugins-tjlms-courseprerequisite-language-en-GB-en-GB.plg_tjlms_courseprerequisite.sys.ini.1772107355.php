@@ -1,0 +1,6 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'PLG_TJLMS_COURSEPREREQUISITE' => 'Shika-Course Prerequisites Integration plugin',
+  'PLG_TJLMS_COURSEPREREQUISITE_XML_DESCRIPTION' => 'Integration between Shika Courses',
+);
