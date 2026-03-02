@@ -28,7 +28,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldIntegration extends JFormField
+class JFormFieldIntegration extends FormField
 {
 	/**
 	 * Function to genarate html of custom element

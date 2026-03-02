@@ -240,7 +240,7 @@ class BoxApiMigration extends CMSObject
 	{
 		$this->addMigrationStyleScript();
 
-		$bar = JToolBar::getInstance('toolbar');
+		$bar = \Joomla\CMS\Toolbar\Toolbar::getInstance('toolbar');
 		$button = "<button id='box-migrate' class='btn'
 			type='submit' onclick=\"tjBoxapi2.migrate.init(); return false;\">
 				<img title='" . Text::_('PLG_TJDOCUMENT_BOXAPI2_MIGRATION_DESC') .

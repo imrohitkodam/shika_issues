@@ -57,7 +57,11 @@ class TjlmsViewFileDownloadStats extends HTMLHelperView
 
 		TjlmsHelper::addSubmenu('filedownloadstats');
 
-		$this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		$this->addToolbar();
 
@@ -81,6 +85,10 @@ class TjlmsViewFileDownloadStats extends HTMLHelperView
 		ToolbarHelper::preferences('com_tjlms');
 
 		// Set sidebar action - New in 3.0
-		JHtmlSidebar::setAction('index.php?option=com_tjlms&view=filedownloadstats');
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			JHtmlSidebar::setAction('index.php?option=com_tjlms&view=filedownloadstats');
+		}
 	}
 }

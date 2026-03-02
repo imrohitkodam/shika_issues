@@ -26,7 +26,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldPointintegrations extends JFormField
+class JFormFieldPointintegrations extends FormField
 {
 	/**
 	 * Function to getInput

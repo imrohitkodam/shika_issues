@@ -24,7 +24,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldActivitystream extends JFormField
+class JFormFieldActivitystream extends FormField
 {
 	public $type = 'activitystream';
 

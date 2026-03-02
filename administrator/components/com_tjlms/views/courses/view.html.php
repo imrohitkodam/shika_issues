@@ -102,7 +102,11 @@ class TjlmsViewCourses extends HtmlView
 		$this->teacherCourseDashboardItemid = $comtjlmsHelper->getitemid($linkOfFrontendDashboard);
 		$this->addToolbar();
 
-		$this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		parent::display($tpl);
 	}

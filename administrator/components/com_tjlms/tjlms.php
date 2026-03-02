@@ -105,10 +105,10 @@ if (!class_exists('comtjlmstrackingHelper'))
 }
 
 $options['relative'] = true;
-JHtml::_('script', 'com_tjlms/tjService.js', $options);
-JHtml::_('script', 'com_tjlms/common.js', $options);
-JHtml::_('script', 'com_tjlms/tjlmsAdmin.js', $options);
-JHtml::script(Uri::root() . 'administrator/components/com_tjlms/assets/js/ajax_file_upload.js');
+HTMLHelper::_('script', 'com_tjlms/tjService.js', $options);
+HTMLHelper::_('script', 'com_tjlms/common.js', $options);
+HTMLHelper::_('script', 'com_tjlms/tjlmsAdmin.js', $options);
+HTMLHelper::script(Uri::root() . 'administrator/components/com_tjlms/assets/js/ajax_file_upload.js');
 
 // Define batch size.
 define('COM_TJLMS_BATCH_SIZE_FOR_AJAX', $tjlmsParams->get('batch_size', '10'));

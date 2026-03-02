@@ -102,7 +102,11 @@ class TjlmsViewDashboard extends HtmlView
 
 		$this->addToolbar();
 
-		$this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+, sidebar rendering is handled differently
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		parent::display($tpl);
 	}

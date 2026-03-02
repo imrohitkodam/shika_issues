@@ -110,7 +110,8 @@ class TmtViewQuestions extends HtmlView
 
 		TmtHelper::addSubmenu('questions');
 
-		if (version_compare(JVERSION, '3.0', 'ge'))
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}

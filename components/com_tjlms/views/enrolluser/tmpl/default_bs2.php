@@ -76,8 +76,8 @@ $input  = JFactory::getApplication()->input;
 				</div>
 				<div class="controls ">
 				<?php
-				JFormHelper::addFieldPath(JPATH_ADMINISTRATOR . '/components/com_tjlms/models/fields/');
-				$Courses = JFormHelper::loadFieldType('courses', false);
+				FormHelper::addFieldPath(JPATH_ADMINISTRATOR . '/components/com_tjlms/models/fields/');
+				$Courses = FormHelper::loadFieldType('courses', false);
 				$this->courseoptions=$Courses->getOptionsExternally();
 				echo JHtml::_('select.genericlist', $this->courseoptions, 'selectedcourse[]', 'class="btn input-medium" multiple="multiple" size="10" name="groupfilter"', "value", "text", $this->course_id);
 		?>	</div>

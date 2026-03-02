@@ -81,7 +81,7 @@ class TjlmsViewModules extends HtmlView
 		$this->lessonform	=	$model->getLessonForm();
 		$this->addToolbar();
 
-		if (JVERSION >= '3.0')
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}

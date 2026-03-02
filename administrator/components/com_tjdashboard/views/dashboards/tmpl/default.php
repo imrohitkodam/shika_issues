@@ -20,7 +20,11 @@ HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 
 HTMLHelper::_('bootstrap.tooltip');
 HTMLHelper::_('behavior.multiselect');
-HTMLHelper::_('formbehavior.chosen', 'select');
+// Chosen is deprecated in Joomla 4+, only load for Joomla 3.x
+if (version_compare(JVERSION, '4.0', 'lt'))
+{
+	HTMLHelper::_('formbehavior.chosen', 'select');
+}
 HTMLHelper::stylesheet('media/com_tjdashboard/css/tjdashboard-sb-admin.css');
 
 $listOrder = $this->escape($this->state->get('list.ordering'));

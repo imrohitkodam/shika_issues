@@ -24,7 +24,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldReview extends JFormField
+class JFormFieldReview extends FormField
 {
 	protected $type = 'text';
 

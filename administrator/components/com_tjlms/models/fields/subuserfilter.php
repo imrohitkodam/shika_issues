@@ -15,14 +15,14 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * JFormFieldSubuserfilter helper.
  *
  * @since  1.1.8
  */
-class JFormFieldSubuserfilter extends JFormFieldList
+class JFormFieldSubuserfilter extends ListField
 {
 	/**
 	 * The form field type.

@@ -168,7 +168,7 @@ class TmtViewQuestion extends HtmlView
 		$checkedOut = !($this->item->checked_out == 0 || $this->item->checked_out == $userId);
 
 		$viewTitle = ($isNew) ? Text::_('COM_TMT_TITLE_COURSE_ADD') : Text::_('COM_TMT_TITLE_COURSE_EDIT');
-		JToolBarHelper::title($viewTitle, 'pencil-2');
+		ToolbarHelper::title($viewTitle, 'pencil-2');
 
 		ToolbarHelper::apply('question.apply');
 		ToolbarHelper::save('question.save');

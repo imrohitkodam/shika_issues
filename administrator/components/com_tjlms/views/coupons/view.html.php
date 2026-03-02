@@ -82,7 +82,7 @@ class TjlmsViewCoupons extends HtmlView
 
 		$this->addToolbar();
 
-		if (JVERSION >= '3.0')
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}
@@ -171,7 +171,8 @@ class TjlmsViewCoupons extends HtmlView
 		}
 
 		// Set sidebar action - New in 3.0
-		if (JVERSION >= '3.0')
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			JHtmlSidebar::setAction('index.php?option=com_tjlms&view=coupons');
 		}

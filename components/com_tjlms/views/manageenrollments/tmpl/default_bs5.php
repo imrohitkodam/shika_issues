@@ -21,7 +21,11 @@ HTMLHelper::_('behavior.formvalidator');
 if (JVERSION >= '3.0')
 {
 	HTMLHelper::_('bootstrap.tooltip');
-	HTMLHelper::_('formbehavior.chosen', 'select');
+	// 'formbehavior.chosen' is deprecated in Joomla 4+
+	if (version_compare(JVERSION, '4.0', 'lt'))
+	{
+		HTMLHelper::_('formbehavior.chosen', 'select');
+	}
 	HTMLHelper::_('behavior.multiselect');
 }
 HTMLHelper::_('bootstrap.renderModal');

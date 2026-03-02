@@ -16,14 +16,14 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * JFormFieldSubuserfilter helper.
  *
  * @since  1.1.8
  */
-class JFormFieldPaymentstatus extends JFormFieldList
+class JFormFieldPaymentstatus extends ListField
 {
 	/**
 	 * The form field type.
@@ -51,7 +51,7 @@ class JFormFieldPaymentstatus extends JFormFieldList
 
 		foreach ($paymentStatus as $status)
 		{
-			$options[] = JHTML::_('select.option', $status->value, $status->text);
+			$options[] = HTMLHelper::_('select.option', $status->value, $status->text);
 		}
 
 		return $options;

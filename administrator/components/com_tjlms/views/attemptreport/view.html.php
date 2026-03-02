@@ -70,7 +70,7 @@ class TjlmsViewAttemptreport extends HtmlView
 
 		$this->addToolbar();
 
-		if (JVERSION >= '3.0')
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}
@@ -90,7 +90,7 @@ class TjlmsViewAttemptreport extends HtmlView
 		require_once JPATH_COMPONENT . '/helpers/tjlms.php';
 		$user      = Factory::getUser();
 		$canCreate = $user->authorise('core.create', 'com_tjlms');
-		$bar = JToolBar::getInstance('toolbar');
+		$bar = \Joomla\CMS\Toolbar\Toolbar::getInstance('toolbar');
 
 		ToolBarHelper::title(Text::_('COM_TJLMS_TITLE_ATTEMPT_REPORT'), 'list');
 

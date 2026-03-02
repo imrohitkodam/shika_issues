@@ -12,15 +12,16 @@ defined('JPATH_PLATFORM') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\ListField;
+use Joomla\CMS\Form\FormHelper;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Form Field to load a list of content authors
  *
  * @since  1.3.32
  */
-class JFormFieldLessonAuthor extends JFormFieldList
+class JFormFieldLessonAuthor extends ListField
 {
 	/**
 	 * The form field type.

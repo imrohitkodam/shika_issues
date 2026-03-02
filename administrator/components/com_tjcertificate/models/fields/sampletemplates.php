@@ -25,7 +25,7 @@ FormHelper::loadFieldClass('list');
  *
  * @since  1.0.0
  */
-class JFormFieldSampleTemplates extends JFormFieldList
+class JFormFieldSampleTemplates extends ListField
 {
 	/**
 	 * Method to get a list of options for a list input.

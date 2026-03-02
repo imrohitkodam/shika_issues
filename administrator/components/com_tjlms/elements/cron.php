@@ -18,7 +18,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.6
  */
-class JFormFieldCron extends JFormField
+class JFormFieldCron extends FormField
 {
 	/**
 	 * Method to get input

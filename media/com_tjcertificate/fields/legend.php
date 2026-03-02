@@ -24,7 +24,7 @@ FormHelper::loadFieldClass('list');
  * @package  Com_Tjcertificate
  * @since    1.0
  */
-class JFormFieldLegend extends JFormFieldList
+class JFormFieldLegend extends ListField
 {
 	/**
 	 * The form field type.

@@ -26,7 +26,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldHeader extends JFormField
+class JFormFieldHeader extends FormField
 {
 	public $type = 'Header';
 /**

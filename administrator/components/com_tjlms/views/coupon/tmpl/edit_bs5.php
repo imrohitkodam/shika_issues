@@ -17,7 +17,8 @@ use Joomla\CMS\HTML\HTMLHelper;
 
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 
-if (JVERSION >= '3.0')
+// Chosen is deprecated in Joomla 4+, only load for Joomla 3.x
+if (version_compare(JVERSION, '4.0', 'lt'))
 {
 	HTMLHelper::_('bootstrap.tooltip');
 	HTMLHelper::_('behavior.formvalidator');
@@ -26,10 +27,11 @@ if (JVERSION >= '3.0')
 }
 else
 {
-	HTMLHelper::_('behavior.tooltip');
 	HTMLHelper::_('behavior.formvalidator');
-	HTMLHelper::_('behavior.keepalive');
+	// In Joomla 4+, chosen is replaced by choices.js automatically
 }
+	HTMLHelper::_('behavior.keepalive');
+
 
 
 // Import CSS

@@ -20,7 +20,7 @@ jimport('joomla.form.formfield');
  * @since  1.0.0
  */
 
-class JFormFieldTimeupdated extends JFormField
+class JFormFieldTimeupdated extends FormField
 {
 	/**
 	 * The form field type.

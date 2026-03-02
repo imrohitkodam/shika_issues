@@ -13,7 +13,7 @@ use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 include_once JPATH_COMPONENT.'/js_defines.php';
-JHtml::script(Uri::root().'administrator/components/com_tmt/assets/js/ajax_file_upload.js');
+HTMLHelper::script(Uri::root().'administrator/components/com_tmt/assets/js/ajax_file_upload.js');
 
 $filepath = Uri::root() . 'administrator/components/com_tjlms/csv/userData.csv';
 $timezoneFilepath = Uri::root() . 'administrator/components/com_tjlms/csv/timeZone.csv';

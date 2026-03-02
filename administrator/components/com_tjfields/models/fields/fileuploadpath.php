@@ -11,7 +11,7 @@ defined('JPATH_PLATFORM') or die;
 
 use Joomla\CMS\Form\FormHelper;
 
-JFormHelper::loadFieldClass('textarea');
+FormHelper::loadFieldClass('textarea');
 
 /**
  * Form Field Textareacounter class

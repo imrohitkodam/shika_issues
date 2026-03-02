@@ -14,8 +14,8 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Language\Text;
 
-JHtml::_('formbehavior.chosen', 'select');
-JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
+HTMLHelper::_('formbehavior.chosen', 'select');
+HTMLHelper::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 $mainframe  = Factory::getApplication('admin');
 
 HTMLHelper::_('script', '/components/com_tjlms/assets/js/jquery.twbsPagination.js');

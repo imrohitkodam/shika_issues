@@ -61,7 +61,12 @@ class TjlmsViewCoursereport extends HtmlView
 		$comtjlmsHelper = new comtjlmsHelper;
 
 		$this->addToolbar();
-		$this->sidebar = JHtmlSidebar::render();
+		
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		parent::display($tpl);
 	}
@@ -78,7 +83,7 @@ class TjlmsViewCoursereport extends HtmlView
 		require_once JPATH_COMPONENT . '/helpers/tjlms.php';
 
 		$state	= $this->get('State');
-		$bar = JToolBar::getInstance('toolbar');
+		$bar = \Joomla\CMS\Toolbar\Toolbar::getInstance('toolbar');
 		ToolbarHelper::title(Text::_('COM_TJLMS_TITLE_COURSES_REPORT'), 'list');
 
 		if (!empty($this->items))

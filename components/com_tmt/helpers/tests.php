@@ -11,6 +11,7 @@
 defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\HTML\HTMLHelper;
 /**
  * Helper Class to for tests
  *
@@ -208,13 +209,13 @@ class TmtTestsHelper
 		$input 		= Factory::getApplication()->input;
 		$teststatus = $input->get('teststatus');
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'Test Status');
-		$options[] = JHTML::_('select.option', '0', 'Pending');
-		$options[] = JHTML::_('select.option', '1', 'Reviewed');
+		$options[] = HTMLHelper::_('select.option', '', 'Test Status');
+		$options[] = HTMLHelper::_('select.option', '0', 'Pending');
+		$options[] = HTMLHelper::_('select.option', '1', 'Reviewed');
 
 		$attr = 'class="inputbox input-medium com_tmt_button" size="1" onchange="submitform( );"';
 
-		return JHTML::_('select.genericlist', $options, 'teststatus', $attr, 'value', 'text', $teststatus);
+		return HTMLHelper::_('select.genericlist', $options, 'teststatus', $attr, 'value', 'text', $teststatus);
 	}
 
 	/**
@@ -248,17 +249,17 @@ class TmtTestsHelper
 		$row = $db->loadAssocList();
 
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'Test Name');
+		$options[] = HTMLHelper::_('select.option', '', 'Test Name');
 
 		foreach ($row AS $key => $val)
 		{
 			$key++;
-			$options[] = JHTML::_('select.option', $val['value'], $val['text']);
+			$options[] = HTMLHelper::_('select.option', $val['value'], $val['text']);
 		}
 
 		$attr = 'class="inputbox input-medium com_tmt_button" size="1" onchange="submitform( );"';
 
-		return JHTML::_('select.genericlist', $options, 'testname', $attr, 'value', 'text', $testid);
+		return HTMLHelper::_('select.genericlist', $options, 'testname', $attr, 'value', 'text', $testid);
 	}
 
 	/**
@@ -322,17 +323,17 @@ class TmtTestsHelper
 		$row = $db->loadAssocList();
 
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'Job Status');
+		$options[] = HTMLHelper::_('select.option', '', 'Job Status');
 
 		foreach ($row AS $key => $val)
 		{
 			$key++;
-			$options[] = JHTML::_('select.option', $val['value'], $val['text']);
+			$options[] = HTMLHelper::_('select.option', $val['value'], $val['text']);
 		}
 
 		$attr = 'class="inputbox input-medium com_tmt_button" size="1" onchange="submitform( );"';
 
-		return JHTML::_('select.genericlist', $options, 'jobstatus', $attr, 'value', 'text', $jobstatus);
+		return HTMLHelper::_('select.genericlist', $options, 'jobstatus', $attr, 'value', 'text', $jobstatus);
 	}
 
 	/**
@@ -366,17 +367,17 @@ class TmtTestsHelper
 		$row = $db->loadAssocList();
 
 		$options = array();
-		$options[] = JHTML::_('select.option', '', 'Job Title');
+		$options[] = HTMLHelper::_('select.option', '', 'Job Title');
 
 		foreach ($row AS $key => $val)
 		{
 			$key++;
-			$options[] = JHTML::_('select.option', $val['value'], $val['text']);
+			$options[] = HTMLHelper::_('select.option', $val['value'], $val['text']);
 		}
 
 		$attr = 'class="inputbox input-medium com_tmt_button" size="1" onchange="submitform( );"';
 
-		return JHTML::_('select.genericlist', $options, 'job_name', $attr, 'value', 'text', $job_name);
+		return HTMLHelper::_('select.genericlist', $options, 'job_name', $attr, 'value', 'text', $job_name);
 	}
 
 	/**

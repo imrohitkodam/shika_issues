@@ -18,14 +18,14 @@ use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list of categories
  *
  * @since  1.0.0
  */
-class JFormFieldLmssubsplans extends JFormField
+class JFormFieldLmssubsplans extends FormField
 {
 	protected $type = 'text';
 

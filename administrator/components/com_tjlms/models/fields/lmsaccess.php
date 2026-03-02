@@ -20,14 +20,14 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Factory;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list of categories
  *
  * @since  1.0
  */
-class JFormFieldLmsaccess extends JFormFieldList
+class JFormFieldLmsaccess extends ListField
 {
 	/**
 	 * The form field type.

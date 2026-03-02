@@ -42,7 +42,7 @@ class JlikeControllerReminder extends FormController
 		// Guess the Text message prefix. Defaults to the option.
 		if (empty($this->extension))
 		{
-			$this->extension = $this->getInput()->get('extension', 'com_content');
+			$this->extension = Factory::getApplication()->input->get('extension', 'com_content');
 		}
 	}
 

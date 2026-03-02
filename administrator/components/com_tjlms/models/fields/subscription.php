@@ -18,7 +18,7 @@ use Joomla\CMS\Factory;
  *
  * @since  1.6
  */
-class JFormFieldSubscription extends JFormField
+class JFormFieldSubscription extends FormField
 {
 	/**
 	 * The form field type.

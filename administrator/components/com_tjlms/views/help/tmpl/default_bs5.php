@@ -13,16 +13,16 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
 
 HTMLHelper::_('bootstrap.renderModal', 'a.modal');
 HTMLHelper::_('bootstrap.tooltip');
 HTMLHelper::_('jquery.framework');
 
-// Load jQuery.
-if (JVERSION >= '3.0')
-{
-	JHtml::_('jquery.framework');
-}
+// Load jQuery - already loaded above, no need for version check
+// In Joomla 4+, jQuery is loaded automatically
 
 //$helperobj = new comquick2cartHelper;
 
@@ -51,7 +51,7 @@ else
 
 		<!--HEADER LEARNING STORE DASHBOARD BACKEND-->
 		<div class="page-header">
-			<h3><?php echo JText::_('COM_TJLMS_BACKEND_HELP_HEADING'); ?></h3>
+			<h3><?php echo Text::_('COM_TJLMS_BACKEND_HELP_HEADING'); ?></h3>
 		</div>
 
 
@@ -59,10 +59,10 @@ else
 		<div class="">
 			<?php if (JVERSION >= '3.0') :?>
 					<?php
-						echo JHtml::_('bootstrap.startTabSet', 'myTab', array('active' => 'aboutproduct'));
+						echo HTMLHelper::_('bootstrap.startTabSet', 'myTab', array('active' => 'aboutproduct'));
 
 							/*TAB 1-- ABOUT COMPONENT*/
-							echo JHtml::_('bootstrap.addTab', 'myTab', 'aboutproduct', JText::_('COM_TJLMS_ABOUT_TECHJOOMLA', true));
+							echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'aboutproduct', Text::_('COM_TJLMS_ABOUT_TECHJOOMLA', true));
 							?>
 								<div class="row p-20">
 									<div class="col-md-12">
@@ -70,22 +70,22 @@ else
 											<div class="col-md-2">
 												<?php
 												$imagePath = 'media/com_tjlms/images/default/';
-												$imagePath = JRoute::_(JUri::root() . $imagePath . 'integrations-lms.png', false);
+												$imagePath = Route::_(Uri::root() . $imagePath . 'integrations-lms.png', false);
 												?>
 												<img class="img-polaroid tjlmslogo" src="<?php echo $imagePath;?>" >
 											</div>
 											<div class="col-md-10 logo-text">
-												<h1><?php echo JText::_('COM_TJLMS'); ?></h1>
+												<h1><?php echo Text::_('COM_TJLMS'); ?></h1>
 											</div>
 										
 											<div class="pt-10">
-												<h3><?php echo JText::_('COM_TJLMS_LEARNING_MGMT_SYSTEM'); ?></h3>
+												<h3><?php echo Text::_('COM_TJLMS_LEARNING_MGMT_SYSTEM'); ?></h3>
 											</div>
 											<div class="clearfix">&nbsp;</div>
 											<!-- <hr class="hr hr-condensed"/> -->
 
 											<div class="col-md-12">
-												<?php echo JText::_('COM_TJLMS_ABOUT_LMS'); ?>
+												<?php echo Text::_('COM_TJLMS_ABOUT_LMS'); ?>
 											</div>
                                      </div>
 									</div>
@@ -98,12 +98,12 @@ else
 													echo '<i class="icon-quote"></i>';
 												else
 													echo '<i class="icon-bullhorn"></i>';
-												?> <?php echo JText::_('COM_TJLMS_LEAVE_JED_FEEDBACK'); ?></a>
+												?> <?php echo Text::_('COM_TJLMS_LEAVE_JED_FEEDBACK'); ?></a>
 										</div>-->
 										<div class="row">
 											<div class="col-md-12 pt-10 ">
 												<p class="pull-left">
-													<span class="label label-info"><strong><?php echo JText::_('COM_TJLMS_STAY_TUNNED'); ?></strong></span>
+													<span class="label label-info"><strong><?php echo Text::_('COM_TJLMS_STAY_TUNNED'); ?></strong></span>
 												</p>
 											</div>
 										</div>
@@ -111,7 +111,7 @@ else
 											<div class="row">
 												<div class="col-md-4">
 													<div class="row">
-												<div class="col-md-3"><?php echo JText::_('COM_TJLMS_FACEBOOK'); ?></div>
+												<div class="col-md-3"><?php echo Text::_('COM_TJLMS_FACEBOOK'); ?></div>
 												<div class="col-md-9 ">
 													<!-- facebook button code -->
 													<div id="fb-root"></div>
@@ -129,7 +129,7 @@ else
 										        <div class="col-md-4">
 										        	<div class="row">
 
-												<div class="col-md-3"><?php echo JText::_('COM_TJLMS_TWITTER'); ?></div>
+												<div class="col-md-3"><?php echo Text::_('COM_TJLMS_TWITTER'); ?></div>
 												<div class="col-md-9">
 													<!-- twitter button code -->
 													<a href="https://twitter.com/techjoomla" class="twitter-follow-button" data-show-count="false">Follow @techjoomla</a>
@@ -139,7 +139,7 @@ else
 												</div>
 										        <div class="col-md-4">
 										        	<div class="row">
-												<div class="col-md-3"><?php echo JText::_('COM_TJLMS_GPLUS'); ?></div>
+												<div class="col-md-3"><?php echo Text::_('COM_TJLMS_GPLUS'); ?></div>
 												<div class="col-md-9">
 													<!-- Place this tag where you want the +1 button to render. -->
 													<div class="g-plusone" data-annotation="inline" data-width="300" data-href="https://plus.google.com/102908017252609853905"></div>
@@ -159,7 +159,7 @@ else
 										<div class="row">
 											<div class="col-md-12 pt-10">
 												<?php
-												$logo_path='<img src="'.JURI::root().'media/com_tjlms/images/default/techjoomla.png" alt="TechJoomla" class="jbolo_vertical_align_top"/>';
+												$logo_path='<img src="'.Uri::root().'media/com_tjlms/images/default/techjoomla.png" alt="TechJoomla" class="jbolo_vertical_align_top"/>';
 												?>
 												<a href='http://techjoomla.com/' target='_blank'>
 													<?php echo $logo_path;?>
@@ -170,24 +170,24 @@ else
 								</div>
 								</div>	
 							<?php
-							echo JHtml::_('bootstrap.endTab');/*TAB 1-- ABOUT COMPONENT ENDS*/
+							echo HTMLHelper::_('bootstrap.endTab');/*TAB 1-- ABOUT COMPONENT ENDS*/
 
 							/*TAB 2-- DOCUMENT LINKS AND SUPPORT*/
-							echo JHtml::_('bootstrap.addTab', 'myTab', 'docs-and-support', JText::_('COM_TJLMS_DOCS_AND_SUPPORT', true));
+							echo HTMLHelper::_('bootstrap.addTab', 'myTab', 'docs-and-support', Text::_('COM_TJLMS_DOCS_AND_SUPPORT', true));
 							?>
 									<!--DOCUMENTATION LINKS-->
 									<div class="row p-20">
 										<div class="col-md-12 pt-10">
-											<h4><?php echo JText::_('COM_TJLMS_DOCS_HEADER');?></h4>
+											<h4><?php echo Text::_('COM_TJLMS_DOCS_HEADER');?></h4>
 										</div>
 										<div class="col-md-12">
-											<a href="//techjoomla.com/table/extension-documentation/shika-lms-for-joomla-documentation/" target="_blank"><i class="icon-file"></i> <?php echo JText::_('COM_TJLMS_DOCS');?></a>
+											<a href="//techjoomla.com/table/extension-documentation/shika-lms-for-joomla-documentation/" target="_blank"><i class="icon-file"></i> <?php echo Text::_('COM_TJLMS_DOCS');?></a>
 										</div>
 									
 									<!--FAQ's-->
 								
 										<div class="col-md-12 pt-10">
-											<h4><?php echo JText::_('COM_TJLMS_FAQS_HEADER');?></h4>
+											<h4><?php echo Text::_('COM_TJLMS_FAQS_HEADER');?></h4>
 										</div>
 										<div class="col-md-12 ">
 											<a href="//techjoomla.com/documentation-for-shika-lms-for-joomla/shika-faqs" target="_blank">
@@ -197,14 +197,14 @@ else
 												else
 													echo '<i class="icon-question-sign"></i>';
 												?>
-												<?php echo JText::_('COM_TJLMS_FAQS');?>
+												<?php echo Text::_('COM_TJLMS_FAQS');?>
 											</a>
 										</div>
 
 									<!--SUPPORT LINKS-->
 									
 										<div class="col-md-12 pt-10">
-											<h4><?php echo JText::_('COM_TJLMS_SUPPORT_HEADER');?></h4>
+											<h4><?php echo Text::_('COM_TJLMS_SUPPORT_HEADER');?></h4>
 										</div>
 										<div class="col-md-12">
 											<a href="//techjoomla.com/forums/categories/shika.html" target="_blank">
@@ -214,16 +214,16 @@ else
 													else
 														echo '<i class="icon-question-sign"></i>';
 
-													echo JText::_('COM_TJLMS_SUPPORT');?>
+													echo Text::_('COM_TJLMS_SUPPORT');?>
 											</a>
 										</div>
 									</div>
 							<?php
-							echo JHtml::_('bootstrap.endTab');/*TAB 1-- ABOUT COMPONENT ENDS*/
+							echo HTMLHelper::_('bootstrap.endTab');/*TAB 1-- ABOUT COMPONENT ENDS*/
 
 
 
-						echo JHtml::_('bootstrap.endTabSet');/*BOOTSTRAP TABSET ENDS*/
+						echo HTMLHelper::_('bootstrap.endTabSet');/*BOOTSTRAP TABSET ENDS*/
 					endif;
 			?>
 		</div><!--row ends-->

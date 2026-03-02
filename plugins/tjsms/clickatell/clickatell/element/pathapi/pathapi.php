@@ -21,7 +21,7 @@ $lang->load('plug_clickatell', JPATH_ADMINISTRATOR);
  *
  * @since  1.0.1
  */
-class JFormFieldPathapi extends JFormField
+class JFormFieldPathapi extends FormField
 {
 	public $type = 'Pathapi';
 

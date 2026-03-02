@@ -60,7 +60,7 @@ class TjlmsViewUserreport extends HtmlView
 
 		$this->addToolbar();
 
-		if (JVERSION >= '3.0')
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}
@@ -79,7 +79,7 @@ class TjlmsViewUserreport extends HtmlView
 	{
 		require_once JPATH_COMPONENT . '/helpers/tjlms.php';
 
-		$bar = JToolBar::getInstance('toolbar');
+		$bar = \Joomla\CMS\Toolbar\Toolbar::getInstance('toolbar');
 		ToolbarHelper::title(Text::_('COM_TJLMS_TITLE_USER_REPORT'), 'list');
 
 		if (!empty($this->items))

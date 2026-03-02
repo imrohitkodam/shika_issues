@@ -22,7 +22,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.3.41
  */
-class JFormFieldGrouptype extends JFormField
+class JFormFieldGrouptype extends FormField
 {
 	protected $type = 'grouptype';
 

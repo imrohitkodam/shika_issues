@@ -122,7 +122,7 @@ class TjlmsViewModules extends HtmlView
 		$courseObj = Tjlms::course($this->CourseInfo->id);
 		$this->passableLessons = $courseObj->getPassableLessons();
 
-		if (JVERSION >= '3.0')
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}

@@ -58,27 +58,27 @@ class TmtViewAnswer extends HtmlView
         }
 		$canDo		= TmtHelper::getActions();
 
-		JToolBarHelper::title(Text::_('COM_TMT_TITLE_ANSWER'), 'answer.png');
+		ToolbarHelper::title(Text::_('COM_TMT_TITLE_ANSWER'), 'answer.png');
 
 		// If not checked out, can save the item.
 		if (!$checkedOut && ($canDo->get('core.edit')||($canDo->get('core.create'))))
 		{
 
-			JToolBarHelper::apply('answer.apply', 'JTOOLBAR_APPLY');
-			JToolBarHelper::save('answer.save', 'JTOOLBAR_SAVE');
+			ToolbarHelper::apply('answer.apply', 'JTOOLBAR_APPLY');
+			ToolbarHelper::save('answer.save', 'JTOOLBAR_SAVE');
 		}
 		if (!$checkedOut && ($canDo->get('core.create'))){
-			JToolBarHelper::custom('answer.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
+			ToolbarHelper::custom('answer.save2new', 'save-new.png', 'save-new_f2.png', 'JTOOLBAR_SAVE_AND_NEW', false);
 		}
 		// If an existing item, can save to a copy.
 		if (!$isNew && $canDo->get('core.create')) {
-			JToolBarHelper::custom('answer.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
+			ToolbarHelper::custom('answer.save2copy', 'save-copy.png', 'save-copy_f2.png', 'JTOOLBAR_SAVE_AS_COPY', false);
 		}
 		if (empty($this->item->id)) {
-			JToolBarHelper::cancel('answer.cancel', 'JTOOLBAR_CANCEL');
+			ToolbarHelper::cancel('answer.cancel', 'JTOOLBAR_CANCEL');
 		}
 		else {
-			JToolBarHelper::cancel('answer.cancel', 'JTOOLBAR_CLOSE');
+			ToolbarHelper::cancel('answer.cancel', 'JTOOLBAR_CLOSE');
 		}
 
 	}

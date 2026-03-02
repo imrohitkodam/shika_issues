@@ -16,7 +16,7 @@ use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Uri\Uri;
 
-JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
+HTMLHelper::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 
 if (JVERSION >= '3.0')
 {
@@ -24,7 +24,7 @@ if (JVERSION >= '3.0')
 	HTMLHelper::_('formbehavior.chosen', 'select');
 	HTMLHelper::_('behavior.multiselect');
 }
-JHTML::_('behavior.modal');
+HTMLHelper::_('behavior.modal');
 
 $user	= Factory::getUser();
 $userId	= $user->get('id');

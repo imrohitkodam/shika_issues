@@ -42,7 +42,11 @@ class TmtViewAnswers extends HtmlView
         
 		$this->addToolbar();
         
-        $this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 		parent::display($tpl);
 	}
 
@@ -58,18 +62,18 @@ class TmtViewAnswers extends HtmlView
 		$state	= $this->get('State');
 		$canDo	= TmtHelper::getActions($state->get('filter.category_id'));
 
-		JToolBarHelper::title(Text::_('COM_TMT_TITLE_ANSWERS'), 'answers.png');
+		ToolbarHelper::title(Text::_('COM_TMT_TITLE_ANSWERS'), 'answers.png');
 
         //Check if the form exists before showing the add/edit buttons
         $formPath = JPATH_COMPONENT_ADMINISTRATOR.'/views/answer';
         if (file_exists($formPath)) {
 
             if ($canDo->get('core.create')) {
-			    JToolBarHelper::addNew('answer.add','JTOOLBAR_NEW');
+			    ToolbarHelper::addNew('answer.add','JTOOLBAR_NEW');
 		    }
 
 		    if ($canDo->get('core.edit') && isset($this->items[0])) {
-			    JToolBarHelper::editList('answer.edit','JTOOLBAR_EDIT');
+			    ToolbarHelper::editList('answer.edit','JTOOLBAR_EDIT');
 		    }
 
         }
@@ -77,40 +81,44 @@ class TmtViewAnswers extends HtmlView
 		if ($canDo->get('core.edit.state')) {
 
             if (isset($this->items[0]->state)) {
-			    JToolBarHelper::divider();
-			    JToolBarHelper::custom('answers.publish', 'publish.png', 'publish_f2.png','JTOOLBAR_PUBLISH', true);
-			    JToolBarHelper::custom('answers.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
+			    ToolbarHelper::divider();
+			    ToolbarHelper::custom('answers.publish', 'publish.png', 'publish_f2.png','JTOOLBAR_PUBLISH', true);
+			    ToolbarHelper::custom('answers.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
             } else if (isset($this->items[0])) {
                 //If this component does not use state then show a direct delete button as we can not trash
-                JToolBarHelper::deleteList('', 'answers.delete','JTOOLBAR_DELETE');
+                ToolbarHelper::deleteList('', 'answers.delete','JTOOLBAR_DELETE');
             }
 
             if (isset($this->items[0]->state)) {
-			    JToolBarHelper::divider();
-			    JToolBarHelper::archiveList('answers.archive','JTOOLBAR_ARCHIVE');
+			    ToolbarHelper::divider();
+			    ToolbarHelper::archiveList('answers.archive','JTOOLBAR_ARCHIVE');
             }
             if (isset($this->items[0]->checked_out)) {
-            	JToolBarHelper::custom('answers.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
+            	ToolbarHelper::custom('answers.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
             }
 		}
         
         //Show trash and delete for components that uses the state field
         if (isset($this->items[0]->state)) {
 		    if ($state->get('filter.state') == -2 && $canDo->get('core.delete')) {
-			    JToolBarHelper::deleteList('', 'answers.delete','JTOOLBAR_EMPTY_TRASH');
-			    JToolBarHelper::divider();
+			    ToolbarHelper::deleteList('', 'answers.delete','JTOOLBAR_EMPTY_TRASH');
+			    ToolbarHelper::divider();
 		    } else if ($canDo->get('core.edit.state')) {
-			    JToolBarHelper::trash('answers.trash','JTOOLBAR_TRASH');
-			    JToolBarHelper::divider();
+			    ToolbarHelper::trash('answers.trash','JTOOLBAR_TRASH');
+			    ToolbarHelper::divider();
 		    }
         }
 
 		if ($canDo->get('core.admin')) {
-			JToolBarHelper::preferences('com_tmt');
+			ToolbarHelper::preferences('com_tmt');
 		}
         
         //Set sidebar action - New in 3.0
-		JHtmlSidebar::setAction('index.php?option=com_tmt&view=answers');
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			JHtmlSidebar::setAction('index.php?option=com_tmt&view=answers');
+		}
         
         $this->extra_sidebar = '';
         

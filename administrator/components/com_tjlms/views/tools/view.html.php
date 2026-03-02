@@ -54,7 +54,11 @@ class TjlmsViewTools extends HtmlView
 
 		ToolbarHelper::title(Text::_('COM_TJLMS_TITLE_TOOLS'), 'list');
 
-		$this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		parent::display($tpl);
 	}

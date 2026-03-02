@@ -144,7 +144,7 @@ class TjlmsViewManageenrollments extends HtmlView
 			$this->coursefilter = $coursefilter;
 		}
 
-		if (!$course_id && JVERSION >= '3.0')
+		if (!$course_id && version_compare(JVERSION, '4.0', 'lt'))
 		{
 			$this->sidebar = JHtmlSidebar::render();
 		}
@@ -239,7 +239,8 @@ class TjlmsViewManageenrollments extends HtmlView
 		}
 
 		// Set sidebar action - New in 3.0
-		if (JVERSION >= '3.0')
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			JHtmlSidebar::setAction('index.php?option=com_tjlms&view=manageenrollments');
 		}

@@ -27,7 +27,15 @@ use Joomla\CMS\HTML\HTMLHelper;
 
 jimport('techjoomla.common');
 
-echo JHtmlBootstrap::renderModal('questioncsv', $this->questions_csv_params);
+// JHtmlBootstrap is deprecated in Joomla 4+, use HTMLHelper::_('bootstrap.renderModal') instead
+if (version_compare(JVERSION, '4.0', 'lt'))
+{
+	echo JHtmlBootstrap::renderModal('questioncsv', $this->questions_csv_params);
+}
+else
+{
+	echo HTMLHelper::_('bootstrap.renderModal', 'questioncsv', $this->questions_csv_params);
+}
 
 $this->techjoomlacommon = new TechjoomlaCommon;
 $lmsparams   = ComponentHelper::getParams('com_tjlms');

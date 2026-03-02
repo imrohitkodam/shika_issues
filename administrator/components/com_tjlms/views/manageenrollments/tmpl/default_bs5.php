@@ -27,7 +27,16 @@ TjlmsHelper::getLanguageConstant();
 
 HTMLHelper::script('administrator/components/com_tjlms/assets/js/tjlmsvalidator.js');
 
-echo JHtmlBootstrap::renderModal('import', $this->user_csv_params);
+// JHtmlBootstrap is deprecated in Joomla 4+, use HTMLHelper::_('bootstrap.renderModal') instead
+if (version_compare(JVERSION, '4.0', 'lt'))
+{
+	echo JHtmlBootstrap::renderModal('import', $this->user_csv_params);
+}
+else
+{
+	echo HTMLHelper::_('bootstrap.renderModal', 'import', $this->user_csv_params);
+}
+
 echo $this->addToolbar();
 
 // ADDED to change date format
@@ -96,7 +105,7 @@ $courseParam = '';
 		Joomla.tableOrdering(order, dirn, '');
 	}
 
-var root_url	=	"<?php echo JURI::base();?>";
+var root_url	=	"<?php echo Uri::base();?>";
 jQuery(document).ready(function() {
 	var width = jQuery(window).width();
 	var height = jQuery(window).height();

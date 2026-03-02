@@ -35,7 +35,7 @@ if (!File::exists(JPATH_ADMINISTRATOR . '/components/com_acymailing/helpers/help
 }
 
 include_once JPATH_ADMINISTRATOR . '/components/com_acymailing/helpers/helper.php';
-JTable::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
+Table::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
 
 /**
  * Methods supporting a list of Tjlms action.

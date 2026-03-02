@@ -24,7 +24,7 @@ jimport('joomla.form.formfield');
  * @package  Com_Tjlms
  * @since    1.0
  */
-class JFormFieldLegend extends JFormField
+class JFormFieldLegend extends FormField
 {
 	/**
 	 * The form field type.

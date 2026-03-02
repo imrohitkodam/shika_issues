@@ -121,12 +121,12 @@ if (!empty($lesson->sub_format))
 	</div>
 	<div class="controls">
 		<?php
-			$options[] = JHTML::_('select.option','0',Text::_('PLG_TJSCORM_NATIVESCORM_SELECT'));
-			$options[] = JHTML::_('select.option','1',Text::_('PLG_TJSCORM_NATIVESCORM_NO_OF_LERAING_OBJECTS'));
-			$options[] = JHTML::_('select.option','2',Text::_('PLG_TJSCORM_NATIVESCORM_HIGHEST_SCORE_AROSS_ALL'));
-			$options[] = JHTML::_('select.option','3',Text::_('PLG_TJSCORM_NATIVESCORM_AVARAGE'));
-			$options[] = JHTML::_('select.option','4',Text::_('PLG_TJSCORM_NATIVESCORM_SUM_OF_ALL'));
-			echo  JHTML::_('select.genericlist', $options, 'lesson_format[nativescorm][grademethod]', 'class = "inputbox"', 'value','text', $grade_method);
+			$options[] = HTMLHelper::_('select.option','0',Text::_('PLG_TJSCORM_NATIVESCORM_SELECT'));
+			$options[] = HTMLHelper::_('select.option','1',Text::_('PLG_TJSCORM_NATIVESCORM_NO_OF_LERAING_OBJECTS'));
+			$options[] = HTMLHelper::_('select.option','2',Text::_('PLG_TJSCORM_NATIVESCORM_HIGHEST_SCORE_AROSS_ALL'));
+			$options[] = HTMLHelper::_('select.option','3',Text::_('PLG_TJSCORM_NATIVESCORM_AVARAGE'));
+			$options[] = HTMLHelper::_('select.option','4',Text::_('PLG_TJSCORM_NATIVESCORM_SUM_OF_ALL'));
+			echo  HTMLHelper::_('select.genericlist', $options, 'lesson_format[nativescorm][grademethod]', 'class = "inputbox"', 'value','text', $grade_method);
 
 			?>
 	</div>

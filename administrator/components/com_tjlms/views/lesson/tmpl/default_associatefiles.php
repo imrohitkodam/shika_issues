@@ -12,6 +12,7 @@ use Joomla\CMS\Utility\Utility;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 HTMLHelper::_('bootstrap.renderModal', 'a.modal');
 HTMLHelper::_('behavior.formvalidator');
 ?>
@@ -82,7 +83,7 @@ $allowedFileSize = HTMLHelper::_('number.bytes', Utility::getMaxUploadSize($cMax
 					</div>
 
 					<div class="col-md-3 selectfilebtn">
-						<a id="selectFileLink" class="btn btn-primary btn-block" onclick="opentjlmsSqueezeBox('<?php echo JUri::root();?>', 'addModal', <?php echo $id ?>); jQuery('#addModal' + <?php echo $id; ?>).removeClass('hide')"><?php echo Text::_('COM_TJLMS_SELECT'); ?></a>
+						<a id="selectFileLink" class="btn btn-primary btn-block" onclick="opentjlmsSqueezeBox('<?php echo Uri::root();?>', 'addModal', <?php echo $id ?>); jQuery('#addModal' + <?php echo $id; ?>).removeClass('hide')"><?php echo Text::_('COM_TJLMS_SELECT'); ?></a>
 						
 						<?php
 										$link = 'index.php?option=com_tjlms&view=lesson&layout=selectassociatefiles&id=' . $id . '&tmpl=component&form_id=' . $this->formId; 

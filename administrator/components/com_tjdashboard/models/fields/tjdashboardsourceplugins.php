@@ -17,7 +17,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\MVC\View\HtmlView;
 use Joomla\CMS\Form\Field\PluginsField;
 
-JFormHelper::loadFieldClass('plugins');
+FormHelper::loadFieldClass('plugins');
 
 /**
  * Form Field class for the Joomla Framework.

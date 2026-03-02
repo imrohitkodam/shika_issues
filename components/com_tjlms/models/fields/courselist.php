@@ -18,7 +18,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list
@@ -47,7 +47,7 @@ class JFormFieldCourselist extends ListField
 
 		$results = $db->loadObjectlist();
 
-		$options[] = JHTML::_('select.option', '', Text::_("TJLMS_SELECT_COURSE"));
+		$options[] = HTMLHelper::_('select.option', '', Text::_("TJLMS_SELECT_COURSE"));
 
 		foreach ($results as $result)
 		{

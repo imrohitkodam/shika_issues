@@ -14,6 +14,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Component\ComponentHelper;
 use Joomla\CMS\Filesystem\File;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\HTML\HTMLHelper;
 
 jimport('joomla.form.formfield');
 
@@ -22,7 +23,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldGroupcategories extends JFormField
+class JFormFieldGroupcategories extends FormField
 {
 	protected $type = 'groupcategories';
 
@@ -87,14 +88,14 @@ class JFormFieldGroupcategories extends JFormField
 
 		foreach ($list as $eachCat)
 		{
-			$options[] = JHTML::_('select.option', $eachCat->id, isset($eachCat->title) ? $eachCat->title : $eachCat->name);
+			$options[] = HTMLHelper::_('select.option', $eachCat->id, isset($eachCat->title) ? $eachCat->title : $eachCat->name);
 		}
 
 		$addedField = 'class="inputbox form-control"';
 		$fieldName = $name;
 
 		$html = '<div id="grpCategoriesField">';
-		$html .= JHTML::_('select.genericlist', $options, $fieldName, $addedField, 'value', 'text', $value, $control_name . $name);
+		$html .= HTMLHelper::_('select.genericlist', $options, $fieldName, $addedField, 'value', 'text', $value, $control_name . $name);
 
 		// $html .= '<a href="' . $createNewLink . '">' . JText::_('COM_TJLMS_CREATE_NEW_CAT_LINK') . '</a>';
 		$html .= '</div>';

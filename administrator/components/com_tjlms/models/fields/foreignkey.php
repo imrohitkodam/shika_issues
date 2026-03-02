@@ -24,7 +24,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.6
  */
-class JFormFieldForeignKey extends JFormField
+class JFormFieldForeignKey extends FormField
 {
 	/**
 	 * The form field type.

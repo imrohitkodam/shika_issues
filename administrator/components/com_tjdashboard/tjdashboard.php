@@ -11,21 +11,22 @@
 defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 use Joomla\CMS\MVC\Controller\BaseController;
+use Joomla\CMS\Uri\Uri;
 
 // Include dependancies
 jimport('joomla.application.component.controller');
 
 $document = Factory::getDocument();
-$script  = 'const root_url = "' . Juri::root() . '";';
+$script  = 'const root_url = "' . Uri::root() . '";';
 $document->addScriptDeclaration($script, 'text/javascript');
 
-JLoader::registerPrefix('Tjdashboard', JPATH_ADMINISTRATOR);
-JLoader::register('TjdashboardController', JPATH_ADMINISTRATOR . '/controller.php');
+JLoader::registerPrefix('Tjdashboard', JPATH_ADMINISTRATOR . '/components/com_tjdashboard');
+JLoader::register('TjdashboardController', JPATH_ADMINISTRATOR . '/components/com_tjdashboard/controller.php');
 
 $app = Factory::getApplication();
 $input = $app->getInput();
 
 // Execute the task.
-$controller = new TjdashboardController();
+$controller = BaseController::getInstance('Tjdashboard');
 $controller->execute($input->get('task'));
 $controller->redirect();

@@ -16,14 +16,14 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list of courses
  *
  * @since  1.6
  */
-class JFormFieldCourses extends JFormFieldList
+class JFormFieldCourses extends ListField
 {
 	/**
 	 * The form field type.

@@ -17,14 +17,14 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Custom field aded for coupon code
  *
  * @since  1.6
  */
-class JFormFieldGetcertlist extends JFormFieldList
+class JFormFieldGetcertlist extends ListField
 {
 	/**
 	 * Method to get a list of options for a list input.

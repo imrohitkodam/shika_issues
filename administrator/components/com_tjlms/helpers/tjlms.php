@@ -230,7 +230,7 @@ class TjlmsHelper
 	public static function getActions()
 	{
 		$user   = Factory::getUser();
-		$result = new \stdClass;
+		$result = new \Joomla\CMS\Object\CMSObject;
 
 		$assetName = 'com_tjlms';
 

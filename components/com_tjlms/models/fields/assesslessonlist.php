@@ -18,7 +18,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list
@@ -36,7 +36,7 @@ class JFormFieldAssesslessonlist extends ListField
 	 */
 	protected function getOptions()
 	{
-		$options[] = JHTML::_('select.option', '', Text::_("TJLMS_SELECT_LESSON"));
+		$options[] = HTMLHelper::_('select.option', '', Text::_("TJLMS_SELECT_LESSON"));
 		$asessLessonFormat = array('exercise','quiz');
 
 		$db  = Factory::getDBO();

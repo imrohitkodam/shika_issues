@@ -323,12 +323,19 @@ class TjnotificationsModelNotification extends AdminModel
 	{
 		$isNew = true;
 
+		// Ensure $data is an array
+		if (!is_array($data))
+		{
+			$this->setError(Text::_('COM_TJNOTIFICATIONS_ERROR_INVALID_DATA'));
+			return false;
+		}
+
 		// 1 - save template first
 		if (!empty($data))
 		{
 			$date = Factory::getDate();
 
-			if ($data['id'])
+			if (!empty($data['id']))
 			{
 				$data['updated_on'] = $date->toSql(true);
 			}

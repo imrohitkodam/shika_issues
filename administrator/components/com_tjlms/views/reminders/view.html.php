@@ -60,7 +60,12 @@ class TjlmsViewReminders extends HtmlView
 
 		$this->addToolbar();
 
-		$this->sidebar = JHtmlSidebar::render();
+		// JHtmlSidebar is deprecated in Joomla 4+
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
+		
 		parent::display($tpl);
 	}
 
@@ -144,7 +149,11 @@ class TjlmsViewReminders extends HtmlView
 		}
 
 		// Set sidebar action - New in 3.0
-		JHtmlSidebar::setAction('index.php?option=com_tjlms&view=reminders');
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			JHtmlSidebar::setAction('index.php?option=com_tjlms&view=reminders');
+		}
 
 		$this->extra_sidebar = '';
 	}

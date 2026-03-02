@@ -21,7 +21,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.3.31
  */
-class JFormFieldAutoenroll extends JFormField
+class JFormFieldAutoenroll extends FormField
 {
 	/**
 	 * Method to get the field input.

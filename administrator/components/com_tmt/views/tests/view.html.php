@@ -138,44 +138,44 @@ class TmtViewTests extends HtmlView
 		$state	= $this->get('State');
 		$canDo = TmtHelper::getActions();
 
-		JToolBarHelper::title(Text::_('COM_TMT_TITLE_TESTS'), 'tests.png');
+		ToolbarHelper::title(Text::_('COM_TMT_TITLE_TESTS'), 'tests.png');
 
 		if ($this->canManageQB)
 		{
-			JToolBarHelper::addNew('test.add', 'JTOOLBAR_NEW');
+			ToolbarHelper::addNew('test.add', 'JTOOLBAR_NEW');
 
 			if (isset($this->items[0]))
 			{
-				JToolBarHelper::editList('test.edit', 'JTOOLBAR_EDIT');
+				ToolbarHelper::editList('test.edit', 'JTOOLBAR_EDIT');
 			}
 
 			if (isset($this->items[0]->state))
 			{
-				JToolBarHelper::divider();
-				JToolBarHelper::custom('tests.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
-				JToolBarHelper::custom('tests.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
+				ToolbarHelper::divider();
+				ToolbarHelper::custom('tests.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
+				ToolbarHelper::custom('tests.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
 
 				if ($state->get('filter.state') == -2)
 				{
-					JToolBarHelper::deleteList('COM_TMT_SURE_DELETE', 'questions.delete', 'JTOOLBAR_EMPTY_TRASH');
-					JToolBarHelper::divider();
+					ToolbarHelper::deleteList('COM_TMT_SURE_DELETE', 'questions.delete', 'JTOOLBAR_EMPTY_TRASH');
+					ToolbarHelper::divider();
 				}
 				else
 				{
-					JToolBarHelper::trash('tests.trash', 'JTOOLBAR_TRASH');
-					JToolBarHelper::divider();
+					ToolbarHelper::trash('tests.trash', 'JTOOLBAR_TRASH');
+					ToolbarHelper::divider();
 				}
 			}
 			elseif (isset($this->items[0]))
 			{
 				// If this component does not use state then show a direct delete button as we can not trash
-				JToolBarHelper::deleteList('COM_TMT_SURE_DELETE', 'questions.delete', 'JTOOLBAR_DELETE');
+				ToolbarHelper::deleteList('COM_TMT_SURE_DELETE', 'questions.delete', 'JTOOLBAR_DELETE');
 			}
 		}
 
 		if ($canDo->get('core.admin'))
 		{
-			JToolBarHelper::preferences('com_tjlms');
+			ToolbarHelper::preferences('com_tjlms');
 		}
 	}
 }

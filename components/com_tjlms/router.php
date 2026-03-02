@@ -20,7 +20,7 @@ use Joomla\CMS\MVC\Model\BaseDatabaseModel;
 use Joomla\CMS\Categories\Categories;
 
 // Add Table Path
-JTable::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
+Table::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
 
 /**
  * Routing class from com_tjlms

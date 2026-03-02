@@ -26,7 +26,7 @@ FormHelper::loadFieldClass('list');
  * @since       1.3.14
  * @deprecated  1.3.32 Use TJCertificate certificatetemplates fields instead
  */
-class JFormFieldCertificatetemplate extends JFormFieldList
+class JFormFieldCertificatetemplate extends ListField
 {
 	/**
 	 * The form field type.

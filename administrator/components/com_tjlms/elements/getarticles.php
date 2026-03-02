@@ -14,14 +14,14 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list of categories
  *
  * @since  1.0.0
  */
-class JFormFieldGetArticles extends JFormFieldList
+class JFormFieldGetArticles extends ListField
 {
 	protected $type = 'GetArticles';
 

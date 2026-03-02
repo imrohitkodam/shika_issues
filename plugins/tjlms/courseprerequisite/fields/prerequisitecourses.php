@@ -13,16 +13,21 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\Field\ListField;
-HTMLHelper::_('formbehavior.chosen', 'select.eligibilitycriteria');
 
-JFormHelper::loadFieldClass('list');
+// 'chosen' is deprecated in Joomla 4+
+if (version_compare(JVERSION, '4.0', 'lt'))
+{
+	HTMLHelper::_('formbehavior.chosen', 'select.eligibilitycriteria');
+}
+
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list of courses
  *
  * @since  1.3.39
  */
-class JFormFieldPrerequisitecourses extends JFormFieldList
+class JFormFieldPrerequisitecourses extends ListField
 {
 	/**
 	 * The form field type.

@@ -81,7 +81,7 @@ class TjlmsViewLessonreport extends HtmlView
 		require_once JPATH_COMPONENT . '/helpers/tjlms.php';
 
 		$state	= $this->get('State');
-		$bar = JToolBar::getInstance('toolbar');
+		$bar = \Joomla\CMS\Toolbar\Toolbar::getInstance('toolbar');
 		ToolBarHelper::title(Text::_('COM_TJLMS_TITLE_LESSON_REPORT'), 'list');
 
 		if (!empty($this->items))

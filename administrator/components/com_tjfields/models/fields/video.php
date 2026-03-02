@@ -14,7 +14,7 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Uri\Uri;
 
-JFormHelper::loadFieldClass('url');
+FormHelper::loadFieldClass('url');
 
 /**
  * Form Field video class

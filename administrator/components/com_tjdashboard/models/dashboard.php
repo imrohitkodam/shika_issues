@@ -35,6 +35,12 @@ class TjdashboardModelDashboard extends AdminModel
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
+		// Ensure $data is an array for Joomla 4+ compatibility
+		if (!is_array($data))
+		{
+			$data = array();
+		}
+
 		// Get the form.
 		$form = $this->loadForm('com_tjdashboard.dashboard', 'dashboard', array('control' => 'jform', 'load_data' => $loadData));
 
@@ -88,6 +94,12 @@ class TjdashboardModelDashboard extends AdminModel
 		if (empty($data))
 		{
 			$data = $this->getItem();
+			
+			// Ensure we always return an array or object, never false
+			if ($data === false || $data === null)
+			{
+				$data = new \stdClass();
+			}
 		}
 
 		return $data;

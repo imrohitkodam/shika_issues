@@ -16,15 +16,16 @@ use Joomla\CMS\Form\FormHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list
  *
  * @since  1.0.0
  */
-class JFormFieldNamelist extends FormFieldList
+class JFormFieldNamelist extends ListField
 {
 	/**
 	 * Method to get a list of options for a list input.
@@ -55,7 +56,7 @@ class JFormFieldNamelist extends FormFieldList
 
 		$results = $db->loadObjectlist();
 
-		$options[] = JHTML::_('select.option', '', Text::_("TJLMS_SELECT_NAME"));
+		$options[] = HTMLHelper::_('select.option', '', Text::_("TJLMS_SELECT_NAME"));
 
 		foreach ($results as $result)
 		{

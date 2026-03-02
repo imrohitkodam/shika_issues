@@ -28,7 +28,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.0.0
  */
-class JFormFieldPointsheader extends JFormField
+class JFormFieldPointsheader extends FormField
 {
 	protected $type = 'pointsheader';
 

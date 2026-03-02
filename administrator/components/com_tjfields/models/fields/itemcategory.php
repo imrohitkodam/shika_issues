@@ -14,8 +14,8 @@ use Joomla\CMS\Table\Table;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Form\FormHelper;
 
-JFormHelper::loadFieldClass('list');
-JFormHelper::loadFieldClass('category');
+FormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('category');
 
 /**
  * Form Field class for the Joomla Platform.

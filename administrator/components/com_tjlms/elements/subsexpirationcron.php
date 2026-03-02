@@ -18,7 +18,7 @@ jimport('joomla.form.formfield');
  *
  * @since  1.6
  */
-class JFormFieldSubsexpirationcron extends JFormField
+class JFormFieldSubsexpirationcron extends FormField
 {
 	/**
 	 * Method to get input

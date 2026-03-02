@@ -24,7 +24,7 @@ jimport('joomla.plugin.plugin');
 $lang = Factory::getLanguage();
 $lang->load('plg_tjtextmedia_joomlacontent', JPATH_ADMINISTRATOR);
 
-JTable::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
+\Joomla\CMS\Table\Table::addIncludePath(JPATH_ROOT . '/administrator/components/com_tjlms/tables');
 
 /**
  * Content builder plugin for Joomla Content

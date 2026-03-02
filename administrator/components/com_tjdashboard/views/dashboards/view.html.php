@@ -143,8 +143,11 @@ class TjdashboardViewDashboards extends HtmlView
 		// Add Toolbar
 		$this->addToolbar();
 
-		// Set sidebar
-		$this->sidebar = JHtmlSidebar::render();
+		// Set sidebar - JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
+		{
+			$this->sidebar = JHtmlSidebar::render();
+		}
 
 		// Display the view
 		parent::display($tpl);
@@ -159,7 +162,7 @@ class TjdashboardViewDashboards extends HtmlView
 	 */
 	protected function addToolbar()
 	{
-		JToolBarHelper::title(Text::_('COM_TJDASHBOARD_VIEW_DASHBOARDS'), 'stack article');
+		ToolbarHelper::title(Text::_('COM_TJDASHBOARD_VIEW_DASHBOARDS'), 'stack article');
 
 		// Check if the form exists before showing the add/edit buttons
 		$formPath = JPATH_ADMINISTRATOR . '/components/com_tjdashboard/views/dashboard';
@@ -173,22 +176,22 @@ class TjdashboardViewDashboards extends HtmlView
 		{
 			if (isset($this->items[0]->state))
 			{
-				JToolBarHelper::divider();
-				JToolBarHelper::custom('dashboards.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
-				JToolBarHelper::custom('dashboards.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
-				JToolBarHelper::divider();
-				JToolBarHelper::archiveList('dashboards.archive', 'JTOOLBAR_ARCHIVE');
+				ToolbarHelper::divider();
+				ToolbarHelper::custom('dashboards.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
+				ToolbarHelper::custom('dashboards.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
+				ToolbarHelper::divider();
+				ToolbarHelper::archiveList('dashboards.archive', 'JTOOLBAR_ARCHIVE');
 				$this->renderTrashDeleteButtons();
 			}
 			elseif (isset($this->items[0]))
 			{
 				// If this component does not use state then show a direct delete button as we can not trash
-				JToolBarHelper::deleteList('', 'dashboards.delete', 'JTOOLBAR_DELETE');
+				ToolbarHelper::deleteList('', 'dashboards.delete', 'JTOOLBAR_DELETE');
 			}
 
 			if (isset($this->items[0]->checked_out))
 			{
-				JToolBarHelper::custom('dashboards.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
+				ToolbarHelper::custom('dashboards.checkin', 'checkin.png', 'checkin_f2.png', 'JTOOLBAR_CHECKIN', true);
 			}
 		}
 	}
@@ -217,13 +220,13 @@ class TjdashboardViewDashboards extends HtmlView
 	{
 		if ($this->canCreate)
 		{
-			JToolBarHelper::addNew('dashboard.add', 'JTOOLBAR_NEW');
+			ToolbarHelper::addNew('dashboard.add', 'JTOOLBAR_NEW');
 			ToolbarHelper::custom('dashboard.duplicate', 'copy.png', 'copy_f2.png', 'JTOOLBAR_DUPLICATE', true);
 		}
 
 		if ($this->canEdit && isset($this->items[0]))
 		{
-			JToolBarHelper::editList('dashboard.edit', 'JTOOLBAR_EDIT');
+			ToolbarHelper::editList('dashboard.edit', 'JTOOLBAR_EDIT');
 		}
 	}
 
@@ -238,13 +241,13 @@ class TjdashboardViewDashboards extends HtmlView
 
 		if ($state->get('filter.state') == -2 && $this->canDelete)
 		{
-			JToolBarHelper::deleteList('', 'dashboards.delete', 'JTOOLBAR_EMPTY_TRASH');
-			JToolBarHelper::divider();
+			ToolbarHelper::deleteList('', 'dashboards.delete', 'JTOOLBAR_EMPTY_TRASH');
+			ToolbarHelper::divider();
 		}
 		elseif ($this->canChangeStatus)
 		{
-			JToolBarHelper::trash('dashboards.trash', 'JTOOLBAR_TRASH');
-			JToolBarHelper::divider();
+			ToolbarHelper::trash('dashboards.trash', 'JTOOLBAR_TRASH');
+			ToolbarHelper::divider();
 		}
 	}
 }

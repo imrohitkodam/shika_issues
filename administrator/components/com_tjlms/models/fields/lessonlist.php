@@ -18,14 +18,14 @@ use Joomla\CMS\Language\Text;
 use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Form\Field\ListField;
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list
  *
  * @since  1.0.0
  */
-class JFormFieldLessonlist extends JFormFieldList
+class JFormFieldLessonlist extends ListField
 {
 	/**
 	 * Method to get a list of options for a list input.

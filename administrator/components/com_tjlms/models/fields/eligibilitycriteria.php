@@ -19,14 +19,14 @@ use Joomla\CMS\Form\Field\ListField;
 use Joomla\CMS\HTML\HTMLHelper;
 HTMLHelper::_('formbehavior.chosen', 'select.eligibilitycriteria');
 
-JFormHelper::loadFieldClass('list');
+FormHelper::loadFieldClass('list');
 
 /**
  * Supports an HTML select list
  *
  * @since  1.0.0
  */
-class JFormFieldEligibilitycriteria extends JFormFieldList
+class JFormFieldEligibilitycriteria extends ListField
 {
 	/**
 	 * The form field type.

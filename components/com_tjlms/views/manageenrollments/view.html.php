@@ -129,23 +129,23 @@ class TjlmsViewManageenrollments extends HtmlView
 
 		if (JVERSION >= '3.0')
 		{
-			JToolBarHelper::title(Text::_('COM_TJLMS_TITLE_MANAGEENROLLMENTS'), 'list');
+			ToolbarHelper::title(Text::_('COM_TJLMS_TITLE_MANAGEENROLLMENTS'), 'list');
 		}
 		else
 		{
-			JToolBarHelper::title(Text::_('COM_TJLMS_TITLE_MANAGEENROLLMENTS'), 'manageenrollments.png');
+			ToolbarHelper::title(Text::_('COM_TJLMS_TITLE_MANAGEENROLLMENTS'), 'manageenrollments.png');
 		}
 
 		if ($canDo->get('core.edit.state'))
 		{
 			if (isset($this->items[0]->state))
 			{
-				JToolBarHelper::divider();
-				JToolBarHelper::custom('manageenrollments.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
-				JToolBarHelper::custom('manageenrollments.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
+				ToolbarHelper::divider();
+				ToolbarHelper::custom('manageenrollments.publish', 'publish.png', 'publish_f2.png', 'JTOOLBAR_PUBLISH', true);
+				ToolbarHelper::custom('manageenrollments.unpublish', 'unpublish.png', 'unpublish_f2.png', 'JTOOLBAR_UNPUBLISH', true);
 
 				// Show trash and delete for components that uses the state field
-				JToolBarHelper::deleteList(Text::_('COM_TJLMS_SURE_DELETE'), 'manageenrollments.delete', 'JTOOLBAR_DELETE');
+				ToolbarHelper::deleteList(Text::_('COM_TJLMS_SURE_DELETE'), 'manageenrollments.delete', 'JTOOLBAR_DELETE');
 			}
 		}
 		// Get an instance of the Toolbar
@@ -157,11 +157,12 @@ class TjlmsViewManageenrollments extends HtmlView
 
 		if ($canDo->get('core.admin'))
 		{
-			JToolBarHelper::preferences('com_tjlms');
+			ToolbarHelper::preferences('com_tjlms');
 		}
 
 		// Set sidebar action - New in 3.0
-		if (JVERSION >= '3.0')
+		// JHtmlSidebar is deprecated in Joomla 4+ and removed in later versions
+		if (version_compare(JVERSION, '4.0', 'lt'))
 		{
 			JHtmlSidebar::setAction('index.php?option=com_tjlms&view=manageenrollments');
 		}

@@ -19,8 +19,13 @@ use Joomla\CMS\Layout\LayoutHelper;
 HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 HTMLHelper::_('bootstrap.tooltip');
 HTMLHelper::_('behavior.multiselect');
-HTMLHelper::_('formbehavior.chosen', '.multipleAuthors', null, array('placeholder_text_multiple' => Text::_('JOPTION_SELECT_AUTHOR')));
-HTMLHelper::_('formbehavior.chosen', 'select');
+
+// 'formbehavior.chosen' is deprecated in Joomla 4+
+if (version_compare(JVERSION, '4.0', 'lt'))
+{
+	HTMLHelper::_('formbehavior.chosen', '.multipleAuthors', null, array('placeholder_text_multiple' => Text::_('JOPTION_SELECT_AUTHOR')));
+	HTMLHelper::_('formbehavior.chosen', 'select');
+}
 
 $listOrder     = $this->state->get('list.ordering');
 $listDirn      = $this->escape($this->state->get('list.direction'));
