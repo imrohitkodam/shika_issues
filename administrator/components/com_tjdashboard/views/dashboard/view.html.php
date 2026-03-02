@@ -110,7 +110,8 @@ class TjdashboardViewDashboard extends HtmlView
 		$canDo = $this->canDo;
 		$layout = Factory::getApplication()->getInput()->get("layout");
 
-		$this->sidebar = JHtmlSidebar::render();
+		// Sidebar removed in Joomla 4+
+		$this->sidebar = '';
 
 		// For new records, check the create permission.
 		if ($layout != "default")
@@ -149,7 +150,8 @@ class TjdashboardViewDashboard extends HtmlView
 
 			if ($app->isClient('administrator'))
 			{
-				$this->sidebar = JHtmlSidebar::render();
+				// Sidebar removed in Joomla 4+
+				$this->sidebar = '';
 			}
 		}
 

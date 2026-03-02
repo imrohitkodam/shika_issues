@@ -14,25 +14,26 @@ use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
 use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
 
 use Joomla\Registry\Registry;
 
-JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
+HTMLHelper::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 
-JHtml::_('behavior.formvalidator');
-JHtml::_('behavior.keepalive');
+HTMLHelper::_('behavior.formvalidator');
+HTMLHelper::_('behavior.keepalive');
 $app = Factory::getApplication();
 $input = $app->input;
 $document = Factory::getDocument();
-$document->addScript(Juri::root() . 'components/com_tjdashboard/assets/js/tjDashboardService.js');
-$document->addScript(Juri::root() . 'components/com_tjdashboard/assets/js/tjDashboardUI.js');
+$document->addScript(Uri::root() . 'components/com_tjdashboard/assets/js/tjDashboardService.js');
+$document->addScript(Uri::root() . 'components/com_tjdashboard/assets/js/tjDashboardUI.js');
 
 // In case of modal
 $isModal = $input->get('layout') == 'modal' ? true : false;
 $layout  = $isModal ? 'modal' : 'edit';
 $tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 
-JFactory::getDocument()->addScriptDeclaration('
+Factory::getDocument()->addScriptDeclaration('
 	jQuery(document).ready(function(){TJDashboardUI._setRenderers()});
 	Joomla.submitbutton = function(task)
 	{

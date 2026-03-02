@@ -15,6 +15,7 @@ use Joomla\CMS\Factory;
 use Joomla\CMS\Router\Route;
 use Joomla\CMS\Layout\LayoutHelper;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 
 use Joomla\Registry\Registry;
 
@@ -22,12 +23,17 @@ HTMLHelper::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_tjdashboard/he
 
 HTMLHelper::_('behavior.formvalidator');
 HTMLHelper::_('behavior.keepalive');
-HTMLHelper::_('formbehavior.chosen', 'select');
+// Joomla 4+ compatibility: chosen is deprecated, but we can safely skip it
+// Modern Joomla uses choicesjs automatically for select fields
+if (version_compare(JVERSION, '4.0', '<'))
+{
+	HTMLHelper::_('formbehavior.chosen', 'select');
+}
 $app = Factory::getApplication();
 $input = $app->getInput();
 
 $document = Factory::getDocument();
-$document->addStylesheet(JURI::root(true) . '/media/com_tjdashboard/css/tjdashboard-sb-admin.css');
+$document->addStylesheet(Uri::root(true) . '/media/com_tjdashboard/css/tjdashboard-sb-admin.css');
 
 // In case of modal
 $isModal = $input->get('layout') == 'modal' ? true : false;
